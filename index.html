@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon - Inicio</title>
+    <!-- Tailwind CSS para los estilos de la página -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+
+    <!-- 1. BARRA SUPERIOR (HEADER ESTILO AMAZON) -->
+    <header class="bg-slate-900 text-white p-3 flex flex-wrap items-center justify-between gap-3 shadow-md">
+        
+        <!-- Logotipo Amazon -->
+        <a href="index.html" class="flex items-center gap-1 cursor-pointer">
+            <span class="text-2xl font-bold text-amber-400">amazon</span>
+            <span class="text-xs text-amber-400 font-semibold align-super">.mx</span>
+        </a>
+
+        <!-- Barra de búsqueda básica -->
+        <div class="flex flex-1 max-w-xl mx-2">
+            <input type="text" placeholder="Buscar productos en Amazon..." class="w-full p-2 text-sm text-black rounded-l-md focus:outline-none">
+            <button class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-4 font-bold rounded-r-md text-sm transition">
+                🔍
+            </button>
+        </div>
+
+        <!-- ENLACE PARA CONECTAR CON FORMULARIO.HTML -->
+        <div class="flex items-center gap-4">
+            <!-- Este enlace lleva directamente al archivo formulario.html -->
+            <a href="formulario.html" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-xs py-2 px-3 rounded shadow transition">
+                Hola, identifícate <br>
+                <span class="text-sm font-extrabold">Crear Cuenta →</span>
+            </a>
+
+            <!-- Carrito de compras (elemento decorativo visual) -->
+            <div class="flex items-center text-xs font-bold gap-1 cursor-pointer hover:text-amber-400 transition">
+                <span class="text-xl">🛒</span>
+                <span>Carrito</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. BARRA DE NAVEGACIÓN SECUNDARIA -->
+    <nav class="bg-slate-800 text-white text-xs px-4 py-2 flex gap-6 overflow-x-auto">
+        <a href="index.html" class="font-bold hover:text-amber-400">Inicio</a>
+        <a href="#" class="hover:text-amber-400">Electrónicos</a>
+        <a href="#" class="hover:text-amber-400">Computadoras</a>
+        <a href="#" class="hover:text-amber-400">Videojuegos</a>
+        <a href="#" class="hover:text-amber-400">Moda</a>
+        <a href="#" class="hover:text-amber-400">Servicio al Cliente</a>
+    </nav>
+
+    <!-- 3. BANNER PRINCIPAL DE LA TIENDA -->
+    <section class="bg-slate-700 text-white p-6 text-center">
+        <h2 class="text-xl font-bold mb-1">Bienvenido a Amazon</h2>
+        <p class="text-xs text-slate-300">Encuentra los mejores productos con envío rápido a todo el país.</p>
+    </section>
+
+    <!-- 4. CATÁLOGO DE PRODUCTOS DESTACADOS CON IMÁGENES -->
+    <main class="max-w-6xl w-full mx-auto p-4 flex-grow">
+        <h2 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Productos Destacados</h2>
+
+        <!-- Cuadrícula con 6 productos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- PRODUCTO 1 -->
+            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop&q=60" alt="Audífonos Bluetooth" class="w-full h-44 object-cover rounded mb-3" onerror="this.src='https://placehold.co/400x300/e2e8f0/1e293b?text=Audifonos'">
+                    <h3 class="font-bold text-sm text-gray-800 mb-1">Audífonos Bluetooth Inalámbricos</h3>
+                    <p class="text-xs text-gray-500 mb-2">Cancelación de ruido y hasta 30 horas de batería.</p>
+                    <p class="text-lg font-bold text-slate-900 mb-2">$599.00 MXN</p>
+                </div>
+                <button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-bold py-2 rounded transition">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=60" alt="Reloj Inteligente" class="w-full h-44 object-cover rounded mb-3" onerror="this.src='https://placehold.co/400x300/e2e8f0/1e293b?text=Reloj+Smart'">
+                    <h3 class="font-bold text-sm text-gray-800 mb-1">Reloj Inteligente Deportivo</h3>
+                    <p class="text-xs text-gray-500 mb-2">Monitoreo de ritmo cardíaco, pasos y notificaciones.</p>
+                    <p class="text-lg font-bold text-slate-900 mb-2">$899.00 MXN</p>
+                </div>
+                <button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-bold py-2 rounded transition">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 3 -->
+            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&auto=format&fit=crop&q=60" alt="Mochila Escolar" class="w-full h-44 object-cover rounded mb-3" onerror="this.src='https://placehold.co/400x300/e2e8f0/1e293b?text=Mochila'">
+                    <h3 class="font-bold text-sm text-gray-800 mb-1">Mochila Escolar e Impermeable</h3>
+                    <p class="text-xs text-gray-500 mb-2">Con compartimento para laptop de hasta 15.6 pulgadas.</p>
+                    <p class="text-lg font-bold text-slate-900 mb-2">$450.00 MXN</p>
+                </div>
+                <button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-bold py-2 rounded transition">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 4 -->
+            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&auto=format&fit=crop&q=60" alt="Soporte para Laptop" class="w-full h-44 object-cover rounded mb-3" onerror="this.src='https://placehold.co/400x300/e2e8f0/1e293b?text=Soporte+Laptop'">
+                    <h3 class="font-bold text-sm text-gray-800 mb-1">Soporte Ajustable para Laptop</h3>
+                    <p class="text-xs text-gray-500 mb-2">Diseño ergonómico de aluminio para mejor postura.</p>
+                    <p class="text-lg font-bold text-slate-900 mb-2">$320.00 MXN</p>
+                </div>
+                <button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-bold py-2 rounded transition">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 5 -->
+            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=400&auto=format&fit=crop&q=60" alt="Mouse Inalámbrico" class="w-full h-44 object-cover rounded mb-3" onerror="this.src='https://placehold.co/400x300/e2e8f0/1e293b?text=Mouse'">
+                    <h3 class="font-bold text-sm text-gray-800 mb-1">Mouse Inalámbrico Ergonómico</h3>
+                    <p class="text-xs text-gray-500 mb-2">Conexión recargable USB silenciosa y precisa.</p>
+                    <p class="text-lg font-bold text-slate-900 mb-2">$280.00 MXN</p>
+                </div>
+                <button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-bold py-2 rounded transition">
+                    Agregar al carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 6 -->
+            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&auto=format&fit=crop&q=60" alt="Teclado Mecánico" class="w-full h-44 object-cover rounded mb-3" onerror="this.src='https://placehold.co/400x300/e2e8f0/1e293b?text=Teclado'">
+                    <h3 class="font-bold text-sm text-gray-800 mb-1">Teclado Mecánico RGB</h3>
+                    <p class="text-xs text-gray-500 mb-2">Teclas retroiluminadas ideales para estudio y juego.</p>
+                    <p class="text-lg font-bold text-slate-900 mb-2">$750.00 MXN</p>
+                </div>
+                <button class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-bold py-2 rounded transition">
+                    Agregar al carrito
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 5. PIE DE PÁGINA (FOOTER) -->
+    <footer class="bg-slate-900 text-white text-center p-4 text-xs mt-auto">
+        <p class="mb-2">
+            <a href="formulario.html" class="text-amber-400 hover:underline">¿No tienes cuenta? Regístrate aquí</a>
+        </p>
+        <p class="text-gray-400">© 2026 Amazon - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

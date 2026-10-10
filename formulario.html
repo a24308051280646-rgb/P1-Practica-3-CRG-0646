@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon - Crear Cuenta</title>
+    <!-- Incluimos Tailwind CSS para los estilos de la página -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col justify-between items-center p-4">
+
+    <!-- 1. ENCABEZADO CON EL LOGO DE AMAZON (Lleva a index.html) -->
+    <header class="w-full max-w-sm text-center my-4">
+        <a href="index.html" class="inline-block hover:opacity-80 transition" title="Volver al inicio">
+            <span class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                amazon<span class="text-amber-500 text-2xl">.mx</span>
+            </span>
+        </a>
+    </header>
+
+    <!-- 2. TARJETA PRINCIPAL DEL FORMULARIO -->
+    <main class="w-full max-w-sm bg-white border border-gray-300 rounded-lg p-6 shadow-sm">
+        
+        <h1 class="text-2xl font-semibold text-gray-900 mb-4">
+            Crear cuenta
+        </h1>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <form id="formularioRegistro" onsubmit="guardarRegistro(event)" class="space-y-4">
+            
+            <!-- CAMPO 1: NOMBRE COMPLETO -->
+            <div>
+                <label for="nombre" class="block text-xs font-bold text-gray-800 mb-1">
+                    Tu nombre
+                </label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    required 
+                    placeholder="Nombre y apellido" 
+                    class="w-full p-2 text-sm border border-gray-400 rounded focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none"
+                >
+            </div>
+
+            <!-- CAMPO 2: CORREO ELECTRÓNICO -->
+            <div>
+                <label for="correo" class="block text-xs font-bold text-gray-800 mb-1">
+                    Correo electrónico
+                </label>
+                <input 
+                    type="email" 
+                    id="correo" 
+                    required 
+                    placeholder="ejemplo@correo.com" 
+                    class="w-full p-2 text-sm border border-gray-400 rounded focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none"
+                >
+            </div>
+
+            <!-- CAMPO 3: CONTRASEÑA -->
+            <div>
+                <label for="password" class="block text-xs font-bold text-gray-800 mb-1">
+                    Contraseña
+                </label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    required 
+                    placeholder="At menos 6 caracteres" 
+                    class="w-full p-2 text-sm border border-gray-400 rounded focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none"
+                >
+            </div>
+
+            <!-- CAMPO 4: CONFIRMAR CONTRASEÑA -->
+            <div>
+                <label for="confirmarPassword" class="block text-xs font-bold text-gray-800 mb-1">
+                    Confirmar contraseña
+                </label>
+                <input 
+                    type="password" 
+                    id="confirmarPassword" 
+                    required 
+                    placeholder="Vuelve a escribir la contraseña" 
+                    class="w-full p-2 text-sm border border-gray-400 rounded focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none"
+                >
+            </div>
+
+            <!-- BOTÓN AMARILLO TIPO AMAZON -->
+            <button 
+                type="submit" 
+                class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-bold py-2.5 rounded shadow border border-amber-500 transition active:bg-amber-600 mt-2"
+            >
+                Crear tu cuenta de Amazon
+            </button>
+
+        </form>
+
+        <!-- AVISO DE CONDICIONES -->
+        <p class="text-[11px] text-gray-600 mt-4 leading-normal">
+            Al crear una cuenta, aceptas las <span class="text-blue-600 hover:underline cursor-pointer">Condiciones de Uso</span> y el <span class="text-blue-600 hover:underline cursor-pointer">Aviso de Privacidad</span> de Amazon.
+        </p>
+
+        <hr class="my-5 border-gray-200">
+
+        <!-- ENLACE DE REGRESO A LA TIENDA -->
+        <div class="text-xs text-gray-700">
+            ¿Ya tienes una cuenta? 
+            <a href="index.html" class="text-blue-600 hover:underline font-semibold ml-1">
+                Iniciar sesión →
+            </a>
+        </div>
+
+        <div class="mt-2 text-xs">
+            <a href="index.html" class="text-gray-600 hover:text-slate-900 hover:underline flex items-center gap-1">
+                ← Volver a la Tienda (index.html)
+            </a>
+        </div>
+
+    </main>
+
+    <!-- 3. MENSAJE EMERGENTE DE ÉXITO (Sustituto moderno de alert) -->
+    <div id="mensajeExito" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg p-6 max-w-sm w-full text-center shadow-xl border border-gray-200">
+            <div class="text-emerald-500 text-4xl mb-2">✓</div>
+            <h2 class="text-lg font-bold text-gray-800 mb-1">¡Cuenta creada con éxito!</h2>
+            <p id="textoBienvenida" class="text-sm text-gray-600 mb-4"></p>
+            <p class="text-xs text-gray-400">Redirigiéndote a la tienda principal...</p>
+        </div>
+    </div>
+
+    <!-- 4. PIE DE PÁGINA DE AMAZON -->
+    <footer class="w-full text-center text-[11px] text-gray-500 my-6">
+        <div class="flex justify-center gap-4 mb-2">
+            <a href="#" class="hover:underline">Condiciones de uso</a>
+            <a href="#" class="hover:underline">Aviso de privacidad</a>
+            <a href="#" class="hover:underline">Ayuda</a>
+        </div>
+        <p>© 2026 Amazon.com, Inc. o sus afiliados</p>
+    </footer>
+
+    <!-- 5. CÓDIGO JAVASCRIPT BÁSICO -->
+    <script>
+        /*
+         * Función básica que se ejecuta al enviar el formulario
+         */
+        function guardarRegistro(event) {
+            // Evitamos que la página se recargue inmediatamente al enviar el formulario
+            event.preventDefault();
+
+            // Obtenemos los valores ingresados en los campos mediante su ID
+            var nombre = document.getElementById('nombre').value;
+            var pass1 = document.getElementById('password').value;
+            var pass2 = document.getElementById('confirmarPassword').value;
+
+            // Validación básica de contraseñas
+            if (pass1 !== pass2) {
+                alert('Las contraseñas no coinciden. Por favor verifícalas.');
+                return;
+            }
+
+            // Mostramos el mensaje personalizado con el nombre de usuario
+            var modal = document.getElementById('mensajeExito');
+            var texto = document.getElementById('textoBienvenida');
+            
+            texto.textContent = 'Bienvenido/a ' + nombre + ' a Amazon.';
+            modal.classList.remove('hidden');
+
+            // Redirige automáticamente a index.html después de 2 segundos
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
